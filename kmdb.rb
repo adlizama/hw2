@@ -113,6 +113,32 @@ new_actor = Actor.new
 new_actor["name"] = "Gary Oldman"
 new_actor.save
 
+new_actor = Actor.new
+new_actor["name"] = "Heath Ledger"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Aaron Eckhart"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Maggie Gyllenhaal"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Tom Hardy"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Joseph Gordon-Levitt"
+new_actor.save
+
+new_actor = Actor.new
+new_actor["name"] = "Anne Hathaway"
+new_actor.save
+
+
+
 #Creates Movies
 
 warner_bros = Studio.find_by({"name" => "Warner Bros."})
@@ -157,8 +183,29 @@ new_Role["actor_id"] = Christian_Bale["id"]
 new_Role["character_name"] = "Bruce Wayne"
 new_Role.save
 
+new_Role = Role.new
+new_Role["movie_id"] = Batman_Begins["id"]
+new_Role["actor_id"] = Michael_Caine["id"]
+new_Role["character_name"] = "Alfred"
+new_Role.save
 
+new_Role = Role.new
+new_Role["movie_id"] = Batman_Begins["id"]
+new_Role["actor_id"] = Liam_Neeson["id"]
+new_Role["character_name"] = "Ra's Al Ghul"
+new_Role.save
 
+new_Role = Role.new
+new_Role["movie_id"] = Batman_Begins["id"]
+new_Role["actor_id"] = Katie_Holmes["id"]
+new_Role["character_name"] = "Rachel Dawes"
+new_Role.save
+
+new_Role = Role.new
+new_Role["movie_id"] = Batman_Begins["id"]
+new_Role["actor_id"] = Gary_Oldman["id"]
+new_Role["character_name"] = "Commissioner Gordon"
+new_Role.save
 
 # Prints a header for the movies output
 puts "Movies"
