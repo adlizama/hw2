@@ -290,6 +290,12 @@ my_studio = Studio.find_by({"id" => warner_bros["id"]})
 
 
 
+
+
+
+# Query the movies data and loop through the results to display the movies output.
+# TODO!
+
 #loop through Warner Bros. Movies
 
 for film in warner_bros_movies
@@ -302,14 +308,28 @@ for film in warner_bros_movies
 end
 
 
-# Query the movies data and loop through the results to display the movies output.
-# TODO!
-
 # Prints a header for the cast output
 puts ""
 puts "Top Cast"
 puts "========"
 puts ""
 
+
+
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+
+
+dark_knight_movie = Movie.find_by({"title" => "The Dark Knight"})
+#puts dark_knight_movie["id"].inspect
+
+dark_knight_actor_hash = Role.where({"movie_id" => dark_knight_movie["id"]})
+#puts dark_knight_actor_hash.inspect
+
+for cast in dark_knight_actor_hash
+    
+    title = dark_knight_movie["title"]
+    movie_role = cast["character_name"]
+    puts "#{title} #{movie_role}"
+
+end
