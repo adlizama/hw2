@@ -319,12 +319,48 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
-
-dark_knight_movie = Movie.find_by({"title" => "The Dark Knight"})
-#puts dark_knight_movie["id"].inspect
+#The Dark Knight Loop
+dark_knight_movie = Movie.find_by({"title" => "Batman Begins"})
 
 dark_knight_actor_hash = Role.where({"movie_id" => dark_knight_movie["id"]})
-#puts dark_knight_actor_hash.inspect
+
+for cast in dark_knight_actor_hash
+    
+    title = dark_knight_movie["title"]
+
+    actor_hash = Actor.find_by({"id" => cast["actor_id"]})
+    actor = actor_hash["name"]
+    
+    movie_role = cast["character_name"]
+    puts "#{title} #{actor} #{movie_role}"
+
+end
+
+
+#The Dark Knight Rises loop
+
+dark_knight_movie = Movie.find_by({"title" => "The Dark Knight Rises"})
+
+dark_knight_actor_hash = Role.where({"movie_id" => dark_knight_movie["id"]})
+
+for cast in dark_knight_actor_hash
+    
+    title = dark_knight_movie["title"]
+
+    actor_hash = Actor.find_by({"id" => cast["actor_id"]})
+    actor = actor_hash["name"]
+    
+    movie_role = cast["character_name"]
+    puts "#{title} #{actor} #{movie_role}"
+
+end
+
+
+#The Dark Knight Rises loop
+
+dark_knight_movie = Movie.find_by({"title" => "The Dark Knight Rises"})
+
+dark_knight_actor_hash = Role.where({"movie_id" => dark_knight_movie["id"]})
 
 for cast in dark_knight_actor_hash
     
