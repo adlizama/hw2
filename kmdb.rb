@@ -329,7 +329,11 @@ dark_knight_actor_hash = Role.where({"movie_id" => dark_knight_movie["id"]})
 for cast in dark_knight_actor_hash
     
     title = dark_knight_movie["title"]
+
+    actor_hash = Actor.find_by({"id" => cast["actor_id"]})
+    actor = actor_hash["name"]
+    
     movie_role = cast["character_name"]
-    puts "#{title} #{movie_role}"
+    puts "#{title} #{actor} #{movie_role}"
 
 end
