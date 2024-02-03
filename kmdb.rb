@@ -285,6 +285,23 @@ puts "Movies"
 puts "======"
 puts ""
 
+warner_bros_movies = Movie.where({"studio_id" => warner_bros["id"]})
+my_studio = Studio.find_by({"id" => warner_bros["id"]})
+
+
+
+#loop through Warner Bros. Movies
+
+for film in warner_bros_movies
+    #read movie info
+    title = film["title"]
+    released = film["year_released"]
+    rated = film["rated"]
+    studio = my_studio["name"]
+    puts "#{title} #{released} #{rated} #{studio}"
+end
+
+
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
