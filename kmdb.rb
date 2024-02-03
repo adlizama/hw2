@@ -166,17 +166,25 @@ new_movie.save
 
 #Creates Roles
 
+#Sets variables for actors
 Christian_Bale = Actor.find_by({"name" => "Christian Bale"})
 Michael_Caine = Actor.find_by({"name" => "Michael Caine"})
 Liam_Neeson = Actor.find_by({"name" => "Liam Neeson"})
 Katie_Holmes = Actor.find_by({"name" => "Katie Holmes"})
 Gary_Oldman = Actor.find_by({"name" => "Gary Oldman"})
+Heath_Ledger = Actor.find_by({"name" => "Heath Ledger"})
+Aaron_Eckhart = Actor.find_by({"name" => "Aaron Eckhart"})
+Maggie_Gyllenhaal = Actor.find_by({"name" => "Maggie Gyllenhaal"})
+Tom_Hardy = Actor.find_by({"name" => "Tom Hardy"})
+Joseph_Gordon_Levitt = Actor.find_by({"name" => "Joseph Gordon-Levitt"})
+Anne_Hathaway = Actor.find_by({"name" => "Anne Hathaway"})
 
+#sets variables for movies
 Batman_Begins = Movie.find_by({"title" => "Batman Begins"})
 The_Dark_Knight = Movie.find_by({"title" => "The Dark Knight"})
 The_Dark_Knight_Rises = Movie.find_by({"title" => "The Dark Knight Rises"})
 
-
+#roles for Batman Begins
 new_Role = Role.new
 new_Role["movie_id"] = Batman_Begins["id"]
 new_Role["actor_id"] = Christian_Bale["id"]
@@ -206,6 +214,71 @@ new_Role["movie_id"] = Batman_Begins["id"]
 new_Role["actor_id"] = Gary_Oldman["id"]
 new_Role["character_name"] = "Commissioner Gordon"
 new_Role.save
+
+#Sets roles for The Dark Knight
+new_Role = Role.new
+new_Role["movie_id"] = The_Dark_Knight["id"]
+new_Role["actor_id"] = Christian_Bale["id"]
+new_Role["character_name"] = "Bruce Wayne"
+new_Role.save
+
+new_Role = Role.new
+new_Role["movie_id"] = The_Dark_Knight["id"]
+new_Role["actor_id"] = Heath_Ledger["id"]
+new_Role["character_name"] = "Joker"
+new_Role.save
+
+new_Role = Role.new
+new_Role["movie_id"] = The_Dark_Knight["id"]
+new_Role["actor_id"] = Aaron_Eckhart["id"]
+new_Role["character_name"] = "Harvey Dent"
+new_Role.save
+
+new_Role = Role.new
+new_Role["movie_id"] = The_Dark_Knight["id"]
+new_Role["actor_id"] = Michael_Caine["id"]
+new_Role["character_name"] = "Alfred"
+new_Role.save
+
+new_Role = Role.new
+new_Role["movie_id"] = The_Dark_Knight["id"]
+new_Role["actor_id"] = Maggie_Gyllenhaal["id"]
+new_Role["character_name"] = "Rachel Dawes"
+new_Role.save
+
+
+#Sets roles for The Dark Knight Rises
+
+new_Role = Role.new
+new_Role["movie_id"] = The_Dark_Knight_Rises["id"]
+new_Role["actor_id"] = Christian_Bale["id"]
+new_Role["character_name"] = "Bruce Wayne"
+new_Role.save
+
+new_Role = Role.new
+new_Role["movie_id"] = The_Dark_Knight_Rises["id"]
+new_Role["actor_id"] = Gary_Oldman["id"]
+new_Role["character_name"] = "Commissioner Gordon"
+new_Role.save
+
+new_Role = Role.new
+new_Role["movie_id"] = The_Dark_Knight_Rises["id"]
+new_Role["actor_id"] = Tom_Hardy["id"]
+new_Role["character_name"] = "Bane"
+new_Role.save
+
+new_Role = Role.new
+new_Role["movie_id"] = The_Dark_Knight_Rises["id"]
+new_Role["actor_id"] = Joseph_Gordon_Levitt["id"]
+new_Role["character_name"] = "John Blake"
+new_Role.save
+
+new_Role = Role.new
+new_Role["movie_id"] = The_Dark_Knight_Rises["id"]
+new_Role["actor_id"] = Anne_Hathaway["id"]
+new_Role["character_name"] = "Selina Kyle"
+new_Role.save
+
 
 # Prints a header for the movies output
 puts "Movies"
