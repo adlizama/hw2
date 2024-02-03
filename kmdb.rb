@@ -94,7 +94,7 @@ new_studio.save
 #Creates Actor Data
 
 new_actor = Actor.new
-new_actor["name"] = "Christian_Bale"
+new_actor["name"] = "Christian Bale"
 new_actor.save
 
 new_actor = Actor.new
@@ -123,6 +123,41 @@ new_movie["year_released"] = 2005
 new_movie["rated"] = "PG-13"
 new_movie["studio_id"]= warner_bros["id"]
 new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight"
+new_movie["year_released"] = 2008
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"]= warner_bros["id"]
+new_movie.save
+
+new_movie = Movie.new
+new_movie["title"] = "The Dark Knight Rises"
+new_movie["year_released"] = 2012
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"]= warner_bros["id"]
+new_movie.save
+
+#Creates Roles
+
+Christian_Bale = Actor.find_by({"name" => "Christian Bale"})
+Michael_Caine = Actor.find_by({"name" => "Michael Caine"})
+Liam_Neeson = Actor.find_by({"name" => "Liam Neeson"})
+Katie_Holmes = Actor.find_by({"name" => "Katie Holmes"})
+Gary_Oldman = Actor.find_by({"name" => "Gary Oldman"})
+
+Batman_Begins = Movie.find_by({"title" => "Batman Begins"})
+The_Dark_Knight = Movie.find_by({"title" => "The Dark Knight"})
+The_Dark_Knight_Rises = Movie.find_by({"title" => "The Dark Knight Rises"})
+
+
+new_Role = Role.new
+new_Role["movie_id"] = Batman_Begins["id"]
+new_Role["actor_id"] = Christian_Bale["id"]
+new_Role["character_name"] = "Bruce Wayne"
+new_Role.save
+
+
 
 
 # Prints a header for the movies output
